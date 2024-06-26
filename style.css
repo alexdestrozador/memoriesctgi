@@ -1,0 +1,189 @@
+/*/* Estilos generales */
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #161212;
+    background-color: #131811; /* Color de fondo general */
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(24, 11, 11, 0.384);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    padding: 0 100px;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #0aaf20;
+}
+
+.navbar .logo {
+    float: left;
+    margin-right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.8;
+    color: #0aaf20;
+}
+
+.navbar a:hover {
+    background-color: #ffffff;
+    color: #0aaf20;
+}
+
+/* Header text */
+.header-text {
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    color: #2f8802;
+}
+
+.text-content h1 {
+    font-size: 80px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(223, 230, 219, 0.897);
+}
+
+.text-content p {
+    width: 75%;
+    margin: auto;
+    line-height: 1.9;
+    text-shadow: 2px 2px 4px rgba(7, 247, 7, 0.5);
+}
+
+.text-content a {
+    background: #fff;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    color: #202020;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: all 0.5s ease;
+    text-shadow: 2px 2px 4px rgba(7, 247, 7, 0.5);
+	
+}
+
+.text-content a:hover {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/* Sección Nosotros */
+.section {
+    padding: 60px 20px;
+    background-color: #eaf0e8;
+    margin: 20px 0;
+    color: #333;
+    min-height: 100vh;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.images {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+    .navbar .logo {
+        float: none;
+        margin-right: 0;
+        font-size: 35px;
+        color: #2abe05;
+    }
+
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        align-items: center;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        padding: 5px 25px;
+    }
+
+    nav {
+        margin-top: 20px;
+    }
+
+    .text-content h1 {
+        font-size: 45px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar a {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+
+    .text-content h1 {
+        font-size: 28px;
+    }
+}
+.login-box h3 {
+    color: #2abe05; /* Cambia 'red' al color que desees */
+    font-size: 14px; /* Opcional: ajusta el tamaño de fuente según tu diseño */
+    margin-top: 10px; /* Opcional: ajusta el margen superior según tu diseño */
+}
+
+/* Añadido al final de tu archivo CSS existente */

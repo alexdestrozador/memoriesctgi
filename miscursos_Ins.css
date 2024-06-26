@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #53d10b;
+    --background-color: #1b1206;
+    --dark-color: #233019e1;
+    --text-color: #333;
+    --hover-color: #dfe3e7;
+    --border-color: #e2e2e2;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ********************************** */
+/*             UTILIDADES             */
+/* ********************************** */
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.heading-1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+/* ********************************** */
+/*               HEADER               */
+/* ********************************** */
+.container-hero {
+    background-color: var(--background-color);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.customer-support {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.customer-support i {
+    font-size: 3.3rem;
+}
+
+.content-customer-support {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ************* NAVBAR ************* */
+.container-navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative; /* Needed for absolute positioning */
+}
+
+.navbar .fa-bars {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    flex: 1; /* Allow space for centering the logo */
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+    opacity: 1;
+}
+
+.menu a:hover {
+    color: #fff;
+}
+
+.container-logo {
+    position: absolute; /* Allows positioning relative to the parent */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensure it's above other elements */
+    text-align: center;
+}
+
+.container-logo h1 a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* ************* SEARCH FORM ************* */
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    overflow: hidden;
+    margin-bottom: 1rem; /* Space below the search form for icons */
+}
+
+.search-form input {
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 25rem;
+    font-size: 1.4rem;
+    padding: 0 2rem;
+    color: #777;
+    cursor: pointer;
+}
+
+.search-form input::-webkit-search-cancel-button {
+    appearance: none;
+}
+
+.search-form .btn-search {
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.btn-search i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* ************* ICONS ************* */
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Estiliza la línea divisoria */
+.divider {
+    width: 2px; /* Ajusta el grosor de la línea */
+    height: 4.4rem; /* Coincide con la altura del contenedor de búsqueda */
+    background-color: #fff; /* Color de la línea */
+    margin: 0 1rem; /* Espaciado horizontal para separar la línea de otros elementos */
+    display: inline-block;
+    vertical-align: middle; /* Alinea verticalmente con el contenedor de búsqueda */
+}
+
+.icon-container i {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.icon-container i:hover {
+    color: var(--hover-color);
+}
+/* Mensaje de bienvenida */
+/* Contenedor del mensaje de bienvenida con la imagen */
+.welcome-container {
+    display: flex; /* Disposición en fila */
+    align-items: center; /* Alinea verticalmente en el centro */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    background-color: #fff; /* Fondo blanco */
+    padding: 2rem; /* Espaciado interno */
+    margin: 2rem auto; /* Espaciado externo */
+    border-radius: 1rem; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 1000px; /* Ancho máximo del contenedor */
+}
+
+/* Estilos para el mensaje de bienvenida */
+.welcome-message {
+    text-align: left; /* Alineación del texto a la izquierda */
+    flex: 2; /* Ocupa más espacio que la imagen */
+}
+
+.welcome-message h1 {
+    color: var(--primary-color); /* Color del texto principal */
+    font-size: 6rem; /* Tamaño de fuente del encabezado */
+    margin-bottom: 1rem; /* Espaciado inferior del encabezado */
+}
+.welcome-message h2 {
+    color: #53d10b;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+.welcome-message h4{
+    color:#1b1206;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.welcome-message p {
+    color: var(--text-color); /* Color del texto */
+    font-size: 3rem; /* Tamaño de fuente del párrafo */
+    margin: 0; /* Eliminar márgenes predeterminados */
+}
+
+/* Estilos para la imagen de bienvenida */
+.welcome-image {
+    flex: 1; /* Ocupa menos espacio que el texto */
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+    margin-left: 2rem; /* Espaciado a la izquierda de la imagen */
+}
+
+.welcome-image img {
+    width: 300px; /* Tamaño de la imagen */
+    height: 150px; /* Tamaño de la imagen */
+    border-radius: 80%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien en el círculo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para la imagen */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+}
+footer{
+    padding-top: 30%;
+}
+.container{
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.footer-content{
+    width: 33.3%;
+}
+h3{
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+    
+}
+.footer-content p{
+    width:190px;
+    margin: auto;
+    padding: 7px;
+}
+.footer-content ul{
+    text-align: center;
+}
+.list{
+    padding: 0;
+}
+.list li{
+    width: auto;
+    text-align: center;
+    list-style-type:none;
+    padding: 7px;
+    position: relative;
+}
+.list li::before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #20ac0e;
+    transition-duration: .5s;
+}
+.list li:hover::before{
+    width: 70px;
+}
+.social-icons{
+    text-align: center;
+    padding: 0;
+}
+.social-icons li{
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+.social-icons i{
+    color: white;
+    font-size: 25px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #cedde2;
+}
+.social-icons i:hover{
+    color: #38a70c;
+}
+.bottom-bar{
+    background: #019c01;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+.bottom-bar p{
+    color: #343434;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
+
+.notification-panel {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente fuera de la pantalla */
+    width: 300px;
+    height: 100%;
+    background-color: #110f0f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+}
+
+.notification-bar {
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #110f0f;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.notification-header span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #e0caca;
+}
+
+.close-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.notification-list {
+    color: #666;
+    text-align: center;
+}
+
+.notification-list p {
+    margin: 20px 0;
+}
+
+.notification-panel.active {
+    right: 0; /* Mostrar panel al activar */
+}
+.profile-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-menu-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.profile-menu.active .profile-menu-content {
+    display: block;
+}
+
+.profile-menu-content ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.profile-menu-content li {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.profile-menu-content a {
+    text-decoration: none;
+    color: #1a1717;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.profile-menu-content a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para la barra de mensajes */
+.message-bar {
+    display: none; /* Oculto inicialmente */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #181616;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    color: #333;
+}
+
+.message-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #161313;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.message-bar-header span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #e0caca;
+}
+
+.message-bar-header .close-message-bar {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.message-bar-content p {
+    margin: 0;
+}
+
+.no-courses {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #38a70c;
+    border: 1px solid #38a70c;
+    border-radius: 4px;
+    position: relative;
+    max-width: 200px;
+    margin: 100px auto;
+    cursor: pointer; /* Cambia el cursor cuando pasa el mouse */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.no-courses:hover {
+    background-color: #b7ff9b; /* Cambia el color de fondo al pasar el mouse */
+    border: 1px solid #b7ff9b;
+}
+
+.no-courses h1 {
+    color: #123a02;
+    font-size: 5rem;
+}
+
+.no-courses h2 {
+    color: #123a02;
+}
+.page-header-headings {
+    background-color: #ebf0f5; /* Background color */
+    padding: 20px;             /* Padding inside the div */
+    border-radius: 8px;        /* Rounded corners */
+    text-align: center;        /* Center the text */
+    margin-bottom: 20px;       /* Margin at the bottom */
+    color: #fff;               /* Text color */
+    box-shadow: 0 4px 8px rgba(40, 163, 3, 0.548); /* Shadow for some depth */
+}
+
+/* Styles for the h1 element */
+.page-header-headings .h2.mb-0 {
+    font-size: 24px;           /* Font size */
+    margin: 0;                 /* Remove default margin */
+    color: #3b9b04;               /* Text color */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+
+    .page-header-headings {
+        padding: 15px;        /* Adjust padding for smaller screens */
+    }
+    .page-header-headings .h2.mb-0 {
+        font-size: 20px;      /* Adjust font size for smaller screens */
+    }
+    }
+    .custom-divider {
+        border: 0;
+        height: 2px; 
+        width: 90%;/* Altura de la línea */
+        background-color: #0e9402; /* Color de fondo de la línea */
+        margin: 20px 0; /* Márgenes superior e inferior */
+    }

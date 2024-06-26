@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicia Sesión</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="registrate.css">
+    
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Memories CTGI</div> 
+    </div>
+    <div class="main">      
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Regístrate</label>
+                <input type="text" name="txt" placeholder="Nombre Completo" required="">
+                <input type="email" name="email" placeholder="Correo electrónico" required="">
+                <input type="password" name="pswd" placeholder="Contraseña" required="">
+
+                <div class="field-wrap">
+                    <label for="role">Rol:</label>
+                    <select id="role" name="role" required>
+                        <option value="aprendiz">Aprendiz</option>
+                        <option value="instructor">Instructor</option>
+                    </select>
+                </div>
+
+                <button>Registrarse</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Inicia Sesión</label>
+                <input type="email" name="email" placeholder="Correo electrónico" required="">
+                <input type="password" name="pswd" placeholder="Contraseña" required="">
+                <button>Ingresar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

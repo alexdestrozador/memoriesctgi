@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Instructor</title>
+        <link rel="stylesheet" href="Menu_Crear_curso.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    </head>
+    <body>
+        <header>
+            <div class="container-hero">
+                <div class="container hero">
+                    <div class="customer-support">
+                        <div class="content-customer-support">
+                            <!-- Contenido del soporte al cliente -->
+                        </div>
+                    </div>
+
+                    <div class="container-logo">
+                        <h1 class="logo"><a href="/">Memories CTGI</a></h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-navbar">
+                <nav class="navbar container">
+                    <i class="fa-solid fa-bars"></i>
+                    <ul class="menu">
+                        <li><a href="perfil_instructor.html#welcome-section">Página principal</a></li>
+                        <li><a href="areapersonal_Ins.html">Área personal</a></li>
+                        <li><a href="miscursos_Ins.html">Mis cursos</a></li>
+                    </ul>
+
+                    <form class="search-form">
+                        <input type="search" placeholder="Buscar..." />
+                        <button class="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="divider"></div>
+
+                    <div class="icon-container">
+                        <i class="fa-solid fa-bell"></i>
+                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="profile-menu">
+                        <div class="profile-menu-content">
+                            <ul>
+                                <li><a href="perfil.html">Perfil</a></li>
+                                <li><a href="">Calendario</a></li>
+                                <li><a href="">Archivos Privados</a></li>
+                                <li><a href="">Informes</a></li>
+                                <li><a href="preferencia.html">Preferencia</a></li>
+                                <li><a href="páginainicial.html">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="page-header-headings">
+        <h1 class="h2 mb-0">Mis cursos</h1>
+        </div>
+        
+        <section class="CrearC">
+            <h4>Crear Nuevo Curso</h4>
+            <input type="text" name="tituloCurso" id="tituloCurso" placeholder="Título del Curso">
+            <input type="text" name="descripcionCurso" id="descripcionCurso" placeholder="Pequeña Descripción">
+            <input type="number" name="entradaCurso" id="entradaCurso" placeholder="Admisión de Entrada">
+        
+            <div id="image-preview" class="image-preview">
+                <span id="image-placeholder">Seleccionar Imagen</span>
+                <img id="selected-image" src="./img/—Pngtree—photo icon_4490555.png" alt="Imagen seleccionada">
+            </div>
+        
+            <div id="crear-boton" class="crear-boton">CREAR</div>
+            <input type="file" id="file-input" accept="image/*" style="display: none;">
+        </section>
+        
+        <div class="notification-panel">
+            <div class="notification-bar">
+                <div class="notification-header">
+                    <span>Notificaciones</span>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="notification-list">
+                    <p>No tienes notificaciones nuevas.</p>
+                </div>
+            </div>
+        </div>
+        <div id="message-bar" class="message-bar">
+            <div class="message-bar-header">
+                <span>Mensajes</span>
+                <button class="close-message-bar">&times;</button>
+            </div>
+            <div class="message-bar-content">
+                <p>No tienes nuevos mensajes.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="bottom-bar">
+                <p>&copy; 2023 your company . All rights reserved</p>
+            </div>
+        </footer>
+
+        <script>
+            const bellIcon = document.querySelector('.fa-bell');
+            const notificationPanel = document.querySelector('.notification-panel');
+            const closeBtn = document.querySelector('.close-btn');
+        
+            bellIcon.addEventListener('click', () => {
+                notificationPanel.classList.toggle('active');
+            });
+        
+            closeBtn.addEventListener('click', () => {
+                notificationPanel.classList.remove('active');
+            });
+
+            
+    const profileIcon = document.querySelector('.fa-user');
+    const profileMenu = document.querySelector('.profile-menu');
+
+    profileIcon.addEventListener('click', () => {
+        profileMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!profileMenu.contains(e.target) && !profileIcon.contains(e.target)) {
+            profileMenu.classList.remove('active');
+        }
+
+        
+    });
+
+    
+    const messageIcon = document.querySelector('.fa-envelope');
+    const messageBar = document.getElementById('message-bar');
+    const closeMessageBar = document.querySelector('.close-message-bar');
+
+    messageIcon.addEventListener('click', () => {
+        messageBar.style.display = 'block';
+    });
+
+    closeMessageBar.addEventListener('click', () => {
+        messageBar.style.display = 'none';
+    });
+
+    // Cerrar la barra de mensajes al hacer clic fuera de ella
+    document.addEventListener('click', (e) => {
+        if (!messageBar.contains(e.target) && !messageIcon.contains(e.target)) {
+            messageBar.style.display = 'none';
+        }
+    });
+</script>  
+        
+        <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+        <script src="MCC.js"></script>
+    </body>
+</html>
